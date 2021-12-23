@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video player</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="video_container">
+      <div class="video_file player">
+        <video class="video" src="./video/1043996179.mp4"></video>
+        <div class="controls_menu">
+          <div class="control_options">
+            <span class="starttimer timer" title="Start Time"></span>
+            <i class="fas fa-volume-up" title="volume"></i>
+            <i class="fas fa-backward" title="backward"></i>
+            <i class="fas fa-play" title="Play"></i>
+            <i class="fas fa-forward" title="forward"></i>
+            <span class="endtimer timer" title="end Time"></span>
+            <select class="speed">
+              <option value="0.5">0.5 x</option>
+              <option value="1" selected>1 x</option>
+              <option value="2">2 x</option>
+              <option value="3">3 x</option>
+              <option value="4">4 x</option>
+            </select>
+            <i class="fas fa-expand" title="Full-Screen"></i>
+          </div>
+          <div class="progressRange">
+            <div class="progressBar"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

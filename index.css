@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.video_container {
+  max-width: 90vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.video {
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin: auto;
+}
+.controls_menu {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  color: black;
+  opacity: 1;
+  transition: 5s linear 8s ease-in-out;
+  background-color: gainsboro;
+  z-index: 100;
+  bottom: 0px;
+
+}
+.controls_menu:hover {
+  opacity: 1;
+  transition: 5s linear 2s ease-in-out;
+}
+.control_options{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+.progressRange {
+  max-width: 100%;
+  height: 10px;
+  background-color: gray;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.progressBar {
+  background-color: dodgerblue;
+  height: inherit;
+  width: 0%;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.fas {
+  margin: auto 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.fas:hover {
+  color: dodgerblue;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.timer {
+  border: 1px solid black;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+}
+.speed {
+  width: 50px;
+  background-color: gray;
+  text-align: center;
+  border: 1px solid #fff;
+  color: black;
+  border-radius: 5px;
+  margin-left: 10px;
+  height: 20px;
+ 
+}
