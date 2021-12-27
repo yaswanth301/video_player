@@ -18,27 +18,35 @@
     <div class="video_container">
       <div class="video_file player">
         <video class="video" src="./video/1043996179.mp4"></video>
+
         <div class="controls_menu">
           <div class="control_options">
             <span class="starttimer timer" title="Start Time"></span>
-            <i class="fas fa-volume-up" title="volume"></i>
+            <i class="fas fa-volume-up" title="volume-full"></i>
             <i class="fas fa-backward" title="backward"></i>
             <i class="fas fa-play" title="Play"></i>
             <i class="fas fa-forward" title="forward"></i>
             <span class="endtimer timer" title="end Time"></span>
-            <select class="speed">
-              <option value="0.5">0.5 x</option>
-              <option value="1" selected>1 x</option>
-              <option value="2">2 x</option>
-              <option value="3">3 x</option>
-              <option value="4">4 x</option>
-            </select>
-            <i class="fas fa-expand" title="Full-Screen"></i>
+            <button class="options">
+              <div class="dropdownMenu">
+                <select class="speed">
+                  <option value="0.5">0.5 x</option>
+                  <option value="1" selected>1 x</option>
+                  <option value="2">2 x</option>
+                  <option value="3">3 x</option>
+                  <option value="4">4 x</option>
+                </select>
+              </div>
+              <i class="fas fa-gear" title="setting"></i>
+               
+            </button>
+
+            <i class="fas fa-expand" title="FullScreen"></i>
           </div>
           <div class="progressRange">
             <div class="progressBar"></div>
+            
           </div>
-          
         </div>
       </div>
     </div>
