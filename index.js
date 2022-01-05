@@ -1,16 +1,20 @@
 //variable declations
 
-const body = document.querySelector("body");
+// const body = document.querySelector("body");
 const video = document.querySelector(".video");
 const video_play = document.querySelector(".fa-play");
 const startingTime = document.querySelector(".starttimer");
 const duration = document.querySelector(".endtimer");
 const progressRange = document.querySelector(".progressRange");
 const progressBar = document.querySelector(".progressBar");
-const audioMute = document.querySelector(".fa-volume-up");
+const audioMute = document.querySelector("#vol-ctrls");
 const speed = document.querySelector(".speed");
 const largeScreen = document.querySelector(".fa-expand");
 const player = document.querySelector(".player");
+const frwd =document.querySelector(".fa-forward");
+const rewind =document.querySelector(".fa-backward");
+
+
 
 //event listerners
 video.addEventListener("click", play);
@@ -21,24 +25,16 @@ video.addEventListener("canplay", updateProgressBar);
 progressRange.addEventListener("click", ProgressBarSet);
 speed.addEventListener("change", playBackSpeed);
 largeScreen.addEventListener("click", toggleFullscreen);
-// largeScreen.addEventListener("keydown", (e) => {
-//   if(e.keycode === 27){
-//    e.largeScreen.classList.remove("fa-compress", "fa-expand");
-//   }
-// });
-
-audioMute.addEventListener("click", volumeMute);
-// audioMute.addEventListener("click", volumeUp);
+frwd.addEventListener("click",frwdVideo);
+rewind.addEventListener("click",backWardVideo);
 
 function finishedVideo() {
   if ((progressBar.style.width = `${100}%`)) {
     video_play.classList.replace("fa-pause", "fa-play");
     progressBar.style.width = `${0}%`;
-    startingTime.textContent= "0:00";
+    startingTime.textContent = "0:00";
   }
 }
-
-
 
 //play & pause functionality...
 function play() {
@@ -73,12 +69,12 @@ function updateProgressBar() {
   duration.textContent = `${updateTimer(video.duration)}`;
 }
 
-//forward & backward
+//forward speed rate
 function playBackSpeed() {
   video.playbackRate = speed.value;
 }
 
-//fullscreen
+//fullscreen funcationality
 let elem = document.documentElement;
 function fullWindow(elem) {
   if (elem.requestFullscreen) {
@@ -113,12 +109,41 @@ function toggleFullscreen() {
   }
   fullscreen = !fullscreen;
 }
-
-//volumebtn functionality
-let volume = 1;
-function volumeMute() {
-  if (volume > 0.5) {
+//volume functionality
+let volume = video.volume;
+audioMute.addEventListener("click", () => {
+  if (video.volume === 1) {
+    video.volume = 0;
     audioMute.classList.replace("fa-volume-up", "fa-volume-down");
-    audioMute.setAttribute("title", "volume-low");
+    audioMute.setAttribute("title", "mute");
+  } else {
+    video.volume = 1;
+    audioMute.classList.replace("fa-volume-down", "fa-volume-up");
+    audioMute.setAttribute("title", "volume-full");
   }
+});
+//loop functionality
+let isInLoop = false;
+let repeat = document.querySelector(".fa-redo");
+repeat.addEventListener("click", () => {
+  if ([...repeat.classList].includes("active")) {
+    repeat.classList.remove("active");
+    repeat.setAttribute("title", "repeat-mode-is-off");
+    video.loop = false;
+  } else {
+    repeat.classList.add("active");
+    repeat.setAttribute("title", "repeat-mode-is-on");
+    video.loop = true;
+  }
+});
+
+function frwdVideo(){
+  video.currentTime = video.currentTime + 5;
 }
+function backWardVideo(){
+  video.currentTime = video.currentTime - 5;
+}
+
+// function currentTimerVideo(){
+//   progressRange.video.duration-
+// }

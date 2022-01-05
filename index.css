@@ -4,25 +4,23 @@
   padding: 0;
 }
 .video_container {
-  max-width: 800px;
+  width: 700px;
   position: relative;
-  top: 0;
-  left: 0;
 }
 .video {
-  border-radius: 10px;
   cursor: pointer;
   width: 100%;
   margin: auto;
+  height: auto;
 }
 .controls_menu {
   position: absolute;
   width: 100%;
+  margin: auto;
   height: auto;
   color: black;
   opacity: 1;
   transition: all 0.5s ease-in-out 0.8s;
-  background-color: gainsboro;
   z-index: 100;
   bottom: 0px;
 }
@@ -32,18 +30,17 @@
 }
 .control_options {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
   flex-wrap: wrap;
-  padding: 5px;
+  padding: 0px 10px;
 }
 .progressRange {
   max-width: 100%;
-  height: 10px;
-  background-color: gray;
+  height: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 5px;
+  margin-bottom: 0;
+  position: relative;
 }
 .progressBar {
   background-color: dodgerblue;
@@ -52,34 +49,112 @@
   position: relative;
   z-index: 10;
   cursor: pointer;
-  border-radius: 5px;
 }
-.control_options .fas {
+.control_options .fas,
+.control_options .far {
   margin: auto 10px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.fas:hover {
+.fas:hover,
+.far:hover,
+.timer:hover {
   color: dodgerblue;
-  transform: scale(1.5);
   cursor: pointer;
 }
 .timer {
-  border: 1px solid black;
   width: 40px;
-  height: 30px;
-  text-align: center;
-  border-radius: 5px;
+  height: auto;
   color: black;
-  padding: 5px;
+  text-align: center;
+  vertical-align: center;
+
+  border: none;
 }
 .speed {
   width: 50px;
-  background-color: gray;
+  height: 25px;
+
   text-align: center;
-  border: 1px solid #fff;
   color: black;
-  border-radius: 5px;
 }
 
+.active {
+  color: dodgerblue;
+}
+.dropMenu {
+  position: relative;
+  display: inline-block;
+}
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  max-width: 100px;
+}
+.dropdownMenu,
+.speed,
+.progressRange,
+.video_container {
+  background-color: gray;
+}
+.dropMenu:hover .dropdownMenu {
+  display: block;
+}
+.btn_setting {
+  padding: 6px;
+  border: none;
+}
+.btn_setting,
+.timer,
+.controls_menu {
+  background-color: gainsboro;
+}
+
+iframe {
+  position: absolute;
+  left: 0;
+  margin: 5px;
+}
+.form {
+  width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+label {
+  text-align: left;
+}
+.form input {
+  width: 100%;
+}
+.form button {
+  margin: 5px auto;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .video_container {
+    width: 100%;
+  }
+  .fa-play,
+  .fa-pause {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    z-index: 1;
+    color: white;
+    font-size: x-large;
+  }
+}
+.progressPointer {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 200;
+  color: black;
+}
+.fa-gear:hover {
+  transform: rotateZ(-90deg);
+}
